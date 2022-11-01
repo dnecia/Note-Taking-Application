@@ -1,4 +1,5 @@
-const PORT = process.env.PORT || 3005;
+//add the port to be able to run locally
+const PORT = process.env.PORT || 3005; //used 3005 due to another project running
 const fs = require("fs");
 const path = require("path");
 
@@ -10,7 +11,7 @@ const allNotes = require("./db/db.json");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-
+//adding the get routes
 app.get("/api/notes", (req, res) => {
   res.json(allNotes.slice(1));
 });
@@ -26,7 +27,7 @@ app.get("/notes", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
-
+//function create a new note on screen
 function createNewNote(body, notesArray) {
   const newNote = body;
   if (!Array.isArray(notesArray)) notesArray = [];
@@ -43,12 +44,12 @@ function createNewNote(body, notesArray) {
 
   return newNote;
 }
-
+//create post route
 app.post("/api/notes", (req, res) => {
   const newNote = createNewNote(req.body, allNotes);
   res.json(newNote);
 });
-
+//extra credit to delete note
 function deleteNote(id, notesArray) {
   for (let i = 0; i < notesArray.length; i++) {
     let note = notesArray[i];
