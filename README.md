@@ -23,4 +23,4 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ![alt text](./public/assets/images/Screen%20Shot%202022-11-01%20at%203.57.19%20PM.png)
 
 ![alt text](./public/assets/images/Screen%20Shot%202022-11-01%20at%203.57.53%20PM.png)
-[This is the link to my Portfolio] (
+[This is the link to the delpyed site on Heroku] (https://radiant-lowlands-20407.herokuapp.com/)
